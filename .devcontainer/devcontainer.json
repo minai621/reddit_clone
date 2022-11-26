@@ -1,6 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-   "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": "docker-compose.yml",
    "settings": { 
       "terminal.integrated.shell.linux": "/bin/bash",
       "sqltools.connections": [{
@@ -14,7 +14,16 @@
           "password": "postgres"
       }]
   },
-
+  "forwardPorts": [3000, 5432],
+  "remoteEnv": {
+    "DATABASE_URL": "postgres://postgres:postgres@localhost:5432/postgres",
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg"
+  ],
+  "remoteUser": "node",
   "features": {
   }
 }
