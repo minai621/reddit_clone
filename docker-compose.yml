@@ -1,27 +1,13 @@
-version: '3'
+version: "3"
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        VARIANT: 16
-        USER_UID: 1000
-        USER_GID: 1000
-    volumes:
-      - ..:/workspace:cached
-
-    command: sleep infinity
-
-    network_mode: service:db
-  db:
-    image: postgres:latest
-    container_name: reddit-postgres
-    restart: always
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-    volumes:
-      - ./data:/var/lib/postgresql/data
+    db:
+        image: postgres:latest
+        container_name: reddit-postgres
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: "postgres"
+            POSTGRES_PASSWORD: "password"
+        volumes:
+            - ./data:/var/lib/postgresql/data
