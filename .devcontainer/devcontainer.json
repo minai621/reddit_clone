@@ -16,7 +16,7 @@
   },
   "forwardPorts": [3000, 5432],
   "remoteEnv": {
-    "DATABASE_URL": "postgres://postgres:postgres@localhost:5432/postgres",
+    "DATABASE_URL": "postgres://postgres:postgres@localhost:5432/postgres"
   },
   "extensions": [
     "dbaeumer.vscode-eslint",
@@ -25,5 +25,11 @@
   ],
   "remoteUser": "node",
   "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+     "version": "1.18"
+    },
+    "ghcr.io/devcontainers/features/docker-from-docker:1": {
+      "version": "latest"
+    }
   }
 }
