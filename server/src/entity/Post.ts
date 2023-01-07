@@ -1,3 +1,4 @@
+import { slugify } from './../utils/helpers';
 import { Exclude, Expose } from 'class-transformer';
 import {
   BeforeInsert,
@@ -8,12 +9,12 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
-import { makeId, slugify } from '../utils/helpers';
 import Comment from './Comment';
 import BaseEntity from './Entity';
 import Sub from './Sub';
 import { User } from './User';
 import Vote from './Vote';
+import { makeId } from '../utils/helpers';
 
 @Entity('posts')
 export default class Post extends BaseEntity {
