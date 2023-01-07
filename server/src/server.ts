@@ -3,18 +3,21 @@ import morgan from 'morgan';
 import cors from 'cors';
 import authRoutes from './routes/auth';
 import { AppDataSource } from './data-source';
+import dotenv from 'dotenv';
 
 const app = express();
 const origin = "https://minai621-probable-happiness-w4459475xqvfxjw-3000.preview.app.github.dev";
 
 app.use(express.json());
 app.use(morgan('dev'));
+dotenv.config();
 app.use(cors({
-  origin
+  origin,
+  credentials: true
 }))
 
 app.get('/', (_, res) => res.send('running'));
-app.use('/api/auth', authRoutes )
+app.use('/api/auth', authRoutes);
 
 let port = 4000;
 
