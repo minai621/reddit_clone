@@ -4,3 +4,4 @@ data
 memo.txt
 client/.env.production
 client/.env.development
+server/.env.development
