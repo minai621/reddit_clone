@@ -66,8 +66,8 @@ function Register() {
           </form>
           <small>
             이미 가입하셨나요?
-            <Link href='/login' className='ml-1 text-blue-500 uppercase'>
-              로그인
+            <Link href='/login'>
+              <a className='ml-1 text-blue-500 uppercase'>로그인</a>
             </Link>
           </small>
         </div>
